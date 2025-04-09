@@ -146,4 +146,4 @@ class InfiniteCarouselState extends State<InfiniteCarousel> {
       curve: widget.autoPlayCurve,
     );
   }
-}
+} 
