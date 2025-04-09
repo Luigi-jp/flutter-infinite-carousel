@@ -1,0 +1,2 @@
+# flutter-infinite-carousel
+Flutterで実装した無限ループするカルーセルUIコンポーネント
