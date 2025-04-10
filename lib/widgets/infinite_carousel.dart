@@ -94,6 +94,22 @@ class InfiniteCarouselState extends State<InfiniteCarousel> {
     }
     super.dispose();
   }
+  
+  @override
+  void didUpdateWidget(InfiniteCarousel oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.autoPlay != oldWidget.autoPlay) {
+      // autoPlayプロパティが変更された場合
+      if (widget.autoPlay) {
+        // オンに変更された場合は自動再生を開始
+        _initializeAutoPlay();
+      } else {
+        // オフに変更された場合はタイマーを停止
+        _timer?.cancel();
+        _timer = null;
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -146,4 +162,4 @@ class InfiniteCarouselState extends State<InfiniteCarousel> {
       curve: widget.autoPlayCurve,
     );
   }
-} 
+}
